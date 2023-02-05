@@ -33,7 +33,7 @@ public class WebDriverFactory {
                 System.out.println("Unknown browser");
         }
         return driver;
-    }//getDriver()
+    }
 
     private static WebDriver getChromeDriver() {
         if (driver == null) {
