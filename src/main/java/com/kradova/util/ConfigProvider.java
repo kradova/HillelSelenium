@@ -1,10 +1,17 @@
 package com.kradova.util;
 
+import com.kradova.core.Browser;
+
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigProvider {
-    public static final String CONFIG_PATH = "config.properties";
+    private static final String CONFIG_PATH = "config.properties";
+    private static final Properties props = initProperties();
+
+    public static final String BROWSER = props.getProperty("browser");
+    public static final String BASE_URL = props.getProperty("base.url");
+
 
     private ConfigProvider() {}
 

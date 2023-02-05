@@ -1,6 +1,8 @@
 package com.kradova.core.driver;
 
 import com.kradova.core.Browser;
+import com.kradova.util.ConfigProvider;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,22 +10,25 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class WebDriverFactory {
+    public static final String BROWSER = System.getProperty("browser");
+
     private static WebDriver driver;
 
-    public static WebDriver getDriver(Browser browser) {
+    public static WebDriver getDriver() {
+        String browserType = BROWSER != null ? BROWSER : ConfigProvider.BROWSER;
+        return getDriver(Browser.valueOf(browserType.toUpperCase()));
+    }
+
+    private static WebDriver getDriver(Browser browser) {
         switch (browser) {
             case CHROME:
-                //@TODO
-                break;
+                return getChromeDriver();
             case FIREFOX:
-                //@TODO
-                break;
+                return getFireFoxDriver();
             case EDGE:
-                //@TODO
-                break;
+                return getEdgeDriver();
             case IE:
-                //@TODO
-                break;
+                return getInternetExplorerDriver();
             default:
                 System.out.println("Unknown browser");
         }
@@ -31,18 +36,34 @@ public class WebDriverFactory {
     }//getDriver()
 
     private static WebDriver getChromeDriver() {
-        return new ChromeDriver();
+        if (driver == null) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        return driver;
     }
 
     private static WebDriver getFireFoxDriver() {
-        return new FirefoxDriver();
+        if (driver == null) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        return driver;
     }
 
     private static WebDriver getEdgeDriver() {
-        return new EdgeDriver();
+        if (driver == null) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+        return driver;
     }
 
     private static WebDriver getInternetExplorerDriver() {
-        return new InternetExplorerDriver();
+        if (driver == null) {
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+        }
+        return driver;
     }
-}//WebDriverFactory
+}
