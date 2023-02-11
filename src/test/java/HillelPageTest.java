@@ -1,9 +1,6 @@
-import com.kradova.core.driver.WebDriverFactory;
 import com.kradova.util.ConfigProvider;
 import com.kradova.util.WaitUtil;
-import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
