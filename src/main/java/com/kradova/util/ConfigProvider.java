@@ -11,11 +11,14 @@ public class ConfigProvider {
 
     public static final String BROWSER = props.getProperty("browser");
     public static final String BASE_URL = props.getProperty("base.url");
+    public static final String HILLEL_URL = props.getProperty("hillel.url");
+    public static final int IMPLICIT_WAIT = Integer.parseInt(props.getProperty("implicit_wait"));
+    public static final int EXPLICIT_WAIT = Integer.parseInt(props.getProperty("explicit_wait"));
 
+    private ConfigProvider() {
+    }
 
-    private ConfigProvider() {}
-
-    private static Properties initProperties()  {
+    private static Properties initProperties() {
         Properties properties = new Properties();
 
         try {
