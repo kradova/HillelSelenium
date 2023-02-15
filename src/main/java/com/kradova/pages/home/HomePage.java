@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
     private static final String pageUrl = "https://ithillel.ua/";
-    private static final By btnAQACourse = By.xpath("//a[@href=\"https://ithillel.ua/courses/testing\"]");
+    public static final By btnAQACourse = By.xpath("//a[@href=\"https://ithillel.ua/courses/testing\"]");
 
     public HomePage(WebDriver driver) {
         super(driver);

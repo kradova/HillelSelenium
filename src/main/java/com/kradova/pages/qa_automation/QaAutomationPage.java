@@ -28,4 +28,8 @@ public class QaAutomationPage extends BasePage {
     public WebElement getPageLogoEl() {
         return driver.findElement(pageLogo);
     }
+
+    public By getPageLogoLocator() {
+        return pageLogo;
+    }
 }

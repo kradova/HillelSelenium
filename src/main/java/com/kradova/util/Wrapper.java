@@ -1,7 +1,7 @@
 package com.kradova.util;
 
-import com.kradova.pages.qa_automation.QaAutomationPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,15 +12,16 @@ import static com.kradova.util.ConfigProvider.EXPLICIT_WAIT;
 public class Wrapper {
 
     public static boolean isElementClickable(WebDriver driver, WebElement element) {
-        boolean res = false;
+        boolean res;
         try {
             new WebDriverWait(driver, EXPLICIT_WAIT)
                     .until(ExpectedConditions.elementToBeClickable(element));
-            res = true;
-        } catch (Exception e) {
-            System.out.println("Element is not clickable");
+            return true;
+        } catch (TimeoutException e) {
+            // return false if element isn't Clickable
+            // in other case app crashes with a Timeout Exception
+            return false;
         }
-        return res;
     }
 
     public static void clickAfterWaiting(WebDriver driver, WebElement element) {
@@ -29,14 +30,16 @@ public class Wrapper {
         element.click();
     }
 
-    public static boolean isElNotExistAfterClick(WebDriver driver, WebElement element) {
+    public static boolean isElNotExistAfterClick(WebDriver driver, WebElement element, By elementLocator) {
         element.click();
-        WebElement res = null;
         try {
-            res = driver.findElement(QaAutomationPage.pageLogo);
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
+            new WebDriverWait(driver, EXPLICIT_WAIT)
+                    .until(ExpectedConditions.invisibilityOfElementLocated(elementLocator));
+            return true;
+        } catch (TimeoutException e) {
+            // return false if element doesn't disappear
+            // in other case app crashes with a Timeout Exception
+            return false;
         }
-        return res == null;
     }
 }
