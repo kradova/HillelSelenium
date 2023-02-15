@@ -4,10 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected String url;
+    protected String pageUrl;
 
-    public BasePage(WebDriver driver) {
+    public BasePage(WebDriver driver, String pageUrl) {
         this.driver = driver;
+        this.pageUrl = pageUrl;
     }
 
     public void open(String url) {
@@ -15,7 +16,7 @@ public abstract class BasePage {
     }
 
     public void open() {
-        open(url);
+        open(pageUrl);
     }
 
     public void close() {
