@@ -6,7 +6,13 @@ public class TestRunner {
 
         //HillelPageTest.isTextExist();
 
-        QaAutomationPageTest.checkCourseTitle();
-        QaAutomationPageTest.checkCourseRate();
+        //QaAutomationPageTest.checkCourseTitle();
+        //QaAutomationPageTest.checkCourseRate();
+
+        WrapperClassTest.testClickAfterWaiting();
+        WrapperClassTest.testIsLogoDisappearsAfterClick();
+        WrapperClassTest.testIsElementClickable();
+
+        BaseTest.closeBrowser();
     }
 }
