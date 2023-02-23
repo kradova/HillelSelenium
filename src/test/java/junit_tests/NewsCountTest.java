@@ -1,6 +1,7 @@
 package junit_tests;
 
 import com.kradova.pages.blog.BlogPage;
+import com.kradova.pages.publications.PublicationsPage;
 import com.kradova.util.WaitUtil;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -27,11 +28,10 @@ public class NewsCountTest extends JunitBaseTest {
     public void testAmountOfArticles(String themeName, int expectedArticles, String name) {
         blogPage.open();
         WebElement theme = blogPage.getThemeByName(themeName);
-        Assertions.assertNotNull(theme);
+        WaitUtil.waitElementIsVisible(driver, theme);
         theme.click();
         WaitUtil.scrollPageBottom(driver);
-        final By article = By.xpath("//*[@id=\"body\"]/div[1]/main/section[2]/div/div/ul/li");
-        List<WebElement> articles = driver.findElements(article);
+        List<WebElement> articles = driver.findElements(PublicationsPage.article);
         Assertions.assertEquals(expectedArticles, articles.size());
     }
 }

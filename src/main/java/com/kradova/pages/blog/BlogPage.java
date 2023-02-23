@@ -16,9 +16,12 @@ public class BlogPage extends BasePage {
     public static final String GAME_DEV_THEME = "GameDev";
     public static final String QA_THEME = "Тестування";
 
+    private final List<WebElement> themes = new ArrayList<>();
+
     public BlogPage(WebDriver driver) {
         super(driver, PAGE_URL);
         PageFactory.initElements(driver, this);
+        populateThemesList();
     }
 
     @FindBy(xpath = "//*[@id=\"body\"]/div[1]/main/section[2]/div/div/ul/li[1]/a")
@@ -30,12 +33,14 @@ public class BlogPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"body\"]/div[1]/main/section[2]/div/div/ul/li[9]/a")
     public WebElement qa;
 
-    private List<WebElement> allThemes() {
-        return new ArrayList<WebElement>(Arrays.asList(frontEnd, gameDev, qa));
+    private void populateThemesList() {
+        themes.add(frontEnd);
+        themes.add(gameDev);
+        themes.add(qa);
     }
 
     public WebElement getThemeByName(String themeName) {
-        for (WebElement theme : allThemes()) {
+        for (WebElement theme : themes) {
             if (theme.getText().equals(themeName)) {
                 return theme;
             }
