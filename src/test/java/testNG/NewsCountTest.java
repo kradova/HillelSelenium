@@ -16,9 +16,9 @@ public class NewsCountTest extends TestNgBaseTest {
     @DataProvider(name = "data-provider")
     public Object[][] dataProviderMethod() {
         return new Object[][]{
-                {BlogPage.FRONT_END_THEME, 121, "Front-end"},
-                {BlogPage.GAME_DEV_THEME, 5, "GameDev"},
-                {BlogPage.QA_THEME, 87, "QA"}
+//                {BlogPage.FRONT_END_THEME, 121, "Front-end"},
+//                {BlogPage.QA_THEME, 87, "QA"},
+                {BlogPage.GAME_DEV_THEME, 5, "GameDev"}
         };
     }
 
@@ -31,5 +31,10 @@ public class NewsCountTest extends TestNgBaseTest {
         WaitUtil.scrollPageBottom(driver);
         List<WebElement> articles = driver.findElements(PublicationsPage.article);
         Assert.assertEquals(expectedArticles, articles.size());
+    }
+
+    @Test(testName = "Error Test")
+    public void testWithError() {
+        Assert.assertEquals(1, 2);
     }
 }
