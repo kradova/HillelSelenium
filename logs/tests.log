@@ -1,0 +1,6 @@
+2023-02-24 00:11:05.778 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles started
+2023-02-24 00:11:33.125 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles finished with result SUCCESS
+2023-02-24 00:11:33.126 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles started
+2023-02-24 00:11:37.184 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles finished with result SUCCESS
+2023-02-24 00:11:37.184 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles started
+2023-02-24 00:11:56.394 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles finished with result SUCCESS
