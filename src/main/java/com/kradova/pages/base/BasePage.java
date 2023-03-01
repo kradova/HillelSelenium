@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected String pageUrl;
+    public String pageUrl;
 
     public BasePage(WebDriver driver, String pageUrl) {
         this.driver = driver;
