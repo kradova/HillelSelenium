@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="TestNG">
         <classes>
-            <class name="testNG.NewsCountTest"/>
+            <class name="cucumber.CucumberTestRunner"/>
         </classes>
     </test>
 </suite>

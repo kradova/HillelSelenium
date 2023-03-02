@@ -28,3 +28,7 @@
 2023-02-25 17:26:30.359 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles finished with result SUCCESS
 2023-02-25 17:26:30.361 [main] INFO  testNG.TestNgBaseTest - Test testWithError started
 2023-02-25 17:26:30.372 [main] INFO  testNG.TestNgBaseTest - Test testWithError finished with result FAILED
+2023-02-25 20:55:51.101 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles started
+2023-02-25 20:55:58.041 [main] INFO  testNG.TestNgBaseTest - Test testAmountOfArticles finished with result SUCCESS
+2023-02-25 20:55:58.045 [main] INFO  testNG.TestNgBaseTest - Test testWithError started
+2023-02-25 20:55:58.088 [main] INFO  testNG.TestNgBaseTest - Test testWithError finished with result FAILED
