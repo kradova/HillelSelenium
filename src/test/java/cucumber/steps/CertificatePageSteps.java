@@ -1,16 +1,9 @@
 package cucumber.steps;
 
-import com.kradova.pages.base.BasePage;
 import com.kradova.pages.certificate.CertificatePage;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 
 public class CertificatePageSteps extends BaseSteps {
     private CertificatePage page;

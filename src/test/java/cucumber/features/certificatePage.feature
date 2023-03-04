@@ -1,3 +1,4 @@
+@ui
 Feature: Check certificate
 
   Scenario Outline: Certificate isn't exist
