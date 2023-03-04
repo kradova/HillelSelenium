@@ -20,10 +20,16 @@
         <log4j.version>2.14.1</log4j.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.21.0</allure.version>
-        <cucumber.version>7.3.4</cucumber.version>
+        <cucumber.version>7.2.3</cucumber.version>
+        <allure-cucumber.version>2.17.2</allure-cucumber.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure-cucumber.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
