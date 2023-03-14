@@ -22,9 +22,33 @@
         <allure.version>2.21.0</allure.version>
         <cucumber.version>7.2.3</cucumber.version>
         <allure-cucumber.version>2.17.2</allure-cucumber.version>
+        <rest-assured.version>5.3.0</rest-assured.version>
+        <json-path.version>5.3.0</json-path.version>
+        <json-schema-validator.version>5.3.0</json-schema-validator.version>
+        <javafaker.version>1.0.2</javafaker.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json-schema-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
